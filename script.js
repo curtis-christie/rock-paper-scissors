@@ -10,7 +10,7 @@ function getComputerChoice() {
   // Using array for selection of choice in random number instead of if...else
   let choices = ["rock", "paper", "scissors"];
   // returning choice based on array index using random number/floor
-  return choices[Math.floor(Math.random() * choices.length)];  
+  return choices[Math.floor(Math.random() * choices.length)];
    
   // let num = Math.floor(Math.random() * 3);
   // let pcChoice;
