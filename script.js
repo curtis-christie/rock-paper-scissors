@@ -1,30 +1,49 @@
+// Initialize scores for global scope
+let humanScore = 0;
+let computerScore = 0;
+// 
+
+
+// Returns computer choice depending on random number generated.
+// Changed to a cleaner code look.
 function getComputerChoice() {
-  let num = Math.floor(Math.random() * 3);
-  let pcChoice;
-  console.log(num);
+  // Using array for selection of choice in random number instead of if...else
+  let choices = ["rock", "paper", "scissors"];
+  // returning choice based on array index using random number/floor
+  return choices[Math.floor(Math.random() * choices.length)];  
+   
+  // let num = Math.floor(Math.random() * 3);
+  // let pcChoice;
+  // console.log(num);
 
-  if (num === 0) {
-      pcChoice = "rock";
-  } else if (num === 1) {
-      pcChoice = "paper";
-  } else {
-      pcChoice = "scissors";
-  };
-  console.log(pcChoice);
+  // if (num === 0) {
+  //     pcChoice = "rock";
+  // } else if (num === 1) {
+  //     pcChoice = "paper";
+  // } else {
+  //     pcChoice = "scissors";
+  // };
+  // console.log(pcChoice);
 
-  return pcChoice;
+  // return pcChoice;
 };
-// HUMAN CHOICE IS NOW DEFINED BY THE BUTTON PRESS IN THE UI
-// function getHumanChoice() {
-//     let humanChoice = prompt("Rock. Paper. Or Scissor?").toLowerCase();
-//     console.log(humanChoice);
-//     return humanChoice;
-// }
+
+// Player choice dependent on what button is pushed.
+// Input elements, each having a different value attribute.
+// Event listener will trigger on click, using value attribute as choice.
+
+
+
+
+
+
+
+
+
 
 function playGame() {
 
-let humanScore = 0;
-let computerScore = 0;
+
 
 rock = document.querySelector(".rock");
 paper = document.querySelector(".paper");
