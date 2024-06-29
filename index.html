@@ -1,93 +1,32 @@
-<script>
-    
-    function getComputerChoice() {
-        let num = Math.floor(Math.random() * 3);
-        let pcChoice;
-        console.log(num);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="container">
+    <h2 class="rock">Rock</h2>
+    <h2 class="paper">Paper</h2>
+    <h2 class="scissors">Scissors</h2>
+  </div>
 
-        if (num === 0) {
-            pcChoice = "rock";
-        } else if (num === 1) {
-            pcChoice = "paper";
-        } else {
-            pcChoice = "scissors";
-        };
-        console.log(pcChoice);
+  <div class="container">
+    <p class="computerChoice">Computer Choice: </p>
+  </div>
 
-        return pcChoice;
-    };
-
-    function getHumanChoice() {
-        let humanChoice = prompt("Rock. Paper. Or Scissor?").toLowerCase();
-        console.log(humanChoice);
-        return humanChoice;
-    }
-
-    
-
+  <div class="score">
+    <p class="playerScore">Player Score: </p>
+    <p class="computerScore">Computer Score: </p>
+  </div>
+  
 
 
-function playGame() {
-    
-    function playRound() {
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
-        let result;
+  <script src="script.js"></script>
 
-        if (humanSelection === computerSelection) {
-            result = "It's a Tie! No one scores this round";
-            console.log(result);
-        } else if ((humanSelection === "rock" && computerSelection === "paper") || (humanSelection === "paper" && computerSelection === "scissors") || (humanSelection === "scissors" && computerSelection === "rock")) {
-            result = "The computer wins! You lose.";
-            computerScore++;
-            console.log(result);
-        } else if ((humanSelection === "rock" && computerSelection === "scissors") || (humanSelection === "paper" && computerSelection === "rock") || (humanSelection === "scissors" && computerSelection === "paper")) {
-            result = "The computer loses! You win!";
-            humanScore++;
-            console.log(result);
-        } else {
-            console.log("You may need to play again.....");
-        }
-        //  CODE I WAS GOING TO USE:
-        //---------------------------------------------------------
-        //     if (computerChoice === "paper" {
-        //         result = "The computer chose paper! You lose.";
-        //         computerScore++;
-        //         return result;
-        //     } else {
-        //         result = "The computer chose scissors! You win!";
-        //         humanScore++;
-        //         return result;
-        //     }
-        // } else if (humanChoice === "paper") {
-        //     if (computerChoice === "scissors") {
-        //         result = "The computer chose scissors! You lose.";
-        //         computerScore++;
-        //         return result;
-        //     } else {
-        //         result = "The computer chose rock! You win!";
-        //         humanScore++;
-        //         return result;
-        //     }
-    }
+</body>
+</html>
 
-    let humanScore = 0;
-    let computerScore = 0;
-
-    playRound();
-    console.log(`The score is You: ${humanScore} Computer: ${computerScore}`);
-    playRound();
-    console.log(`The score is You: ${humanScore} Computer: ${computerScore}`);
-    playRound();
-    console.log(`The score is You: ${humanScore} Computer: ${computerScore}`);
-    playRound();
-    console.log(`The score is You: ${humanScore} Computer: ${computerScore}`);
-    playRound();
-    console.log(`The FINAL score is You: ${humanScore} Computer: ${computerScore}`);
-
-    return;
-}
-
-playGame();
-
-</script>
